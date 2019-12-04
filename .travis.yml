@@ -6,18 +6,23 @@ python:
   - "3.5"
   - "2.7"
 
-env:
+
+env: 
   - DJANGO="django>=1.11,<1.12"
   - DJANGO="django>=2.1,<2.2"
+  - DJANGO="django>=2.2,<2.3"
 
 matrix:
   exclude:
    - python: "2.7"
      env: DJANGO="django>=2.1,<2.2"
+   - python: "2.7"
+     env: DJANGO="django>=2.2,<2.3"
 
 branches:
   only:
     - master
+    - operation/env
 
 # command to install requirements
 install:
